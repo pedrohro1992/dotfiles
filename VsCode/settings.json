@@ -1,0 +1,140 @@
+{
+  //Workbench and Editor Configs
+  "redhat.telemetry.enabled": false,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.mouseWheelZoom": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.sortImports": "explicit"
+  },
+  "gopls": { "ui.semanticTokens": false },
+  "editor.formatOnSave": true,
+  "workbench.startupEditor": "none",
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.confirmDelete": false,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.settings.applyToAllProfiles": ["editor.fontSize"],
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "CaskaydiaMono Nerd Font",
+  "terminal.integrated.cursorStyle": "line",
+  "editor.fontFamily": "CaskaydiaMono Nerd Font",
+  "editor.renderWhitespace": "none",
+  "editor.fontSize": 16,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Kanagawa",
+  "files.associations": {
+    "*plays.yml": "ansible",
+    "*init.yml": "yaml"
+  },
+  //VScode Icons Configs
+  "vsicons.dontShowNewVersionMessage": true,
+  //Git Project Manager Configs
+  "gitProjectManager.baseProjectsFolders": ["~/Workspace"],
+  //VIM Configs
+  "vim.easymotion": true,
+  "vim.leader": "<space>",
+  "vim.incsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  "vim.useSystemClipboard": true,
+  "vim.smartRelativeLine": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-z>"],
+      "commands": ["workbench.action.togglePanel"]
+    },
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<S-k>"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": [":w"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": [":q"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<C-a>"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": ["fuzzySearch.activeTextEditor"]
+    },
+    {
+      "before": ["<leader>", "f", "W"],
+      "commands": ["workbench.view.search"]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["gitProjectManager.openProjectNewWindow"]
+    },
+    // Better experience with splitscren
+    {
+      "before": ["<leader>", "v", "s"],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    // Debuger e Diagnostics
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.problems.focus"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["editor.debug.action.toggleBreakpoint"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.action.debug.run"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-p>": false,
+    "<C-z>": true,
+    "<C-f>": false
+  },
+  "vim.useCtrlKeys": true,
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.tabs.enabled": false,
+  "workbench.editor.enablePreview": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "go.toolsManagement.autoUpdate": true,
+  "editor.minimap.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "window.menuBarVisibility": "compact"
+}
