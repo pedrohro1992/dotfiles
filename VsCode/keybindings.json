@@ -12,6 +12,13 @@
     "command": "workbench.action.quickOpen",
     "when": "!filesExplorerFocus && !inputFocus"
   },
+
+  {
+    "key": "ctrl+n",
+    "command": "- workbench.action.files.newUntitledFile",
+    "when": "inQuickOpen"
+  },
+
   // Terminal KeyBindings
   {
     "key": "ctrl+j",
