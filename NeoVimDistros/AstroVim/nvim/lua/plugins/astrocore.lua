@@ -47,10 +47,10 @@ return {
           callback = function()
             -- se funcionar atualizar comentario
             -- TODO: VERIFICAR COMO FAZER ESSA LOGICA
-            local numberofubffers = vim.fn.buflisted
-            if numberofubffers == 1 then
+            local wins = vim.api.nvim_tabpage_list_wins(0)
+            if #wins <= 1 then
               -- if it is different, then set the new `showtabline` value
-              vim.cmd "Neotree"
+              vim.cmd "Neotree show"
             end
           end,
         },
