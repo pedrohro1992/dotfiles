@@ -5,12 +5,12 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  -- Misc
-  { import = "astrocommunity.diagnostics.trouble-nvim" },
-  -- Language Packages
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.go" },
-  { import = "astrocommunity.pack.docker" },
-  -- Colorscheme
+  { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" },
+
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.recipes.heirline-vscode-winbar" },
+  -- import/override with your plugins folder
 }
