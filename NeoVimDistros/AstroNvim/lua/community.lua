@@ -8,6 +8,9 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.terraform" },
+  { import = "astrocommunity.pack.helm" },
+  { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" },
 
   { import = "astrocommunity.colorscheme.catppuccin" },
