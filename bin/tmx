@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# ==============================================================================
+# Script: tmx
+# Description: Automates Tmuxifier session creation and attachment based on 
+#              the current directory name and a base template.
+# ==============================================================================
+
+# Define the session name based on the current directory (sanitize dots to underscores)
+SESSION_NAME=$(basename "$PWD" | tr '.' '_')
+
+# Paths for Tmuxifier layouts and the base template
+LAYOUT_DIR="$HOME/.tmuxifier/layouts"
+LAYOUT_FILE="${LAYOUT_DIR}/${SESSION_NAME}.session.sh"
+BASE_TEMPLATE="${LAYOUT_DIR}/base_dev.window.sh"
+
+# Ensure the layout directory exists
+if [ ! -d "$LAYOUT_DIR" ]; then
+    mkdir -p "$LAYOUT_DIR"
+fi
+
+# Check if a layout for the current project already exists
+if [ ! -f "$LAYOUT_FILE" ]; then
+    echo "Initializing new Tmuxifier layout for: $SESSION_NAME"
+
+    # Validate if the base template exists before copying
+    if [ ! -f "$BASE_TEMPLATE" ]; then
+        echo "Error: Base template not found at $BASE_TEMPLATE"
+        exit 1
+    fi
+
+    # Create the session file header
+    echo "session_root \"$PWD\"" > "$LAYOUT_FILE"
+    echo "if initialize_session \"$SESSION_NAME\"; then" >> "$LAYOUT_FILE"
+
+    # Append the content of the base template to the new session file
+    cat "$BASE_TEMPLATE" >> "$LAYOUT_FILE"
+
+    # Close the session initialization block
+    echo "fi" >> "$LAYOUT_FILE"
+    echo "finalize_and_go_to_session" >> "$LAYOUT_FILE"
+fi
+
+# Load or attach to the session
+# Tmuxifier handles attaching automatically if the session is already running
+tmuxifier load-session "$SESSION_NAME"
