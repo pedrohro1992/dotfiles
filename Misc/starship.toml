@@ -1,0 +1,40 @@
+add_newline = true
+
+# Change the default prompt format
+format = """\
+[╭╴](238)$env_var\
+$all[╰─](238)$character"""
+
+# Change the default prompt characters
+[character]
+success_symbol = "[](green)"
+error_symbol = "[](red)"
+
+
+
+
+# Shows current directory
+[directory]
+#truncation_length = 10
+#truncation_symbol = "…/"
+#home_symbol = " ~"
+fish_style_pwd_dir_length = 0
+#read_only_style = "197"
+#format = "[$path]($style)[$read_only]($read_only_style) "
+
+
+
+# Shows kubernetes context and namespace
+[kubernetes]
+format = '[󱃾 $context\($namespace\)](bold red )'
+disabled = false
+
+[terraform]
+format = '[🏎💨 $version$workspace]($style) '
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = 'bold blue'
+symbol = '🅰 '
+#[aws.profile_aliases]
+#CompanyGroupFrobozzOnCallAccess = 'Frobozz'
